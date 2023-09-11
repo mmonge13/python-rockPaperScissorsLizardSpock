@@ -1,3 +1,8 @@
+"""
+Este módulo proporciona acceso a funciones aleatorias y funciones relacionadas con el tiempo.
+
+- random: Proporciona funciones para generar números aleatorios.
+"""
 import random
 
 # Print the rules of the game
@@ -38,15 +43,15 @@ while True:
 
     # Determine the result of the game
     if choice == comp_choice:
-        result = "DRAW"
+        result = ["DRAW"]
     elif ((choice == 1 and comp_choice == 2) or
           (choice == 2 and comp_choice == 1)):
-        result = "Paper"
+        result = ["Paper"]
     elif ((choice == 1 and comp_choice == 3) or
           (choice == 3 and comp_choice == 1)):
-        result = "Rock"
+        result = ["Rock"]
     else:
-        result = "Scissors"
+        result = ["Scissors"]
 
     # Print the result
     if result == "DRAW":

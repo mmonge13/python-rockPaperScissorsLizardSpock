@@ -1,3 +1,11 @@
+"""
+Este módulo proporciona acceso a funciones aleatorias y funciones relacionadas con el tiempo.
+
+Módulos importados:
+- random: Proporciona funciones para generar números aleatorios.
+- time: Proporciona funciones relacionadas con el tiempo, como sleep() para pausar la ejecución.
+"""
+
 import random
 import time
 
@@ -21,6 +29,14 @@ actions = {
 
 # Function to print text with a typing effect
 def print_with_typing(text, delay=0.05):
+    """
+    Imprime el texto letra por letra con un retraso opcional entre cada letra.
+
+    Args:
+        text (str): El texto que se va a imprimir.
+        delay (float, opcional): El tiempo de retraso en segundos 
+        entre cada letra (por defecto es 0.05).
+    """
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -28,7 +44,7 @@ def print_with_typing(text, delay=0.05):
 
 # Print the welcome message and information about the game with typing effect
 print_with_typing("Welcome to the Game ROCK - PAPER - SCISSORS - LIZARD - SPOCK")
-print_with_typing("The game was created by internet pioneer Sam Cass as an improvement on the classic game rock paper scissors.")
+print_with_typing("The game was created by internet pioneer Sam Cass as an improvement on the classic game rock paper scissors.") # pylint: disable=line-too-long
 print_with_typing("The rules of the game are:")
 print_with_typing("Scissors CUTS Paper")
 print_with_typing("Paper COVERS Rock")
@@ -47,7 +63,7 @@ print_with_typing("")
 
 # Ask the user to acknowledge Sam Cass
 print_with_typing("All Hail Sam Cass!!!")
-acknowledge_sam = input("Type 'Hail' to continue or 'again' to Print the rules of the game again: ").lower()
+acknowledge_sam = input("Type 'Hail' to continue or 'again' to Print the rules of the game again: ").lower() # pylint: disable=line-too-long
 
 while acknowledge_sam != 'hail':
     if acknowledge_sam == 'again':
@@ -57,7 +73,7 @@ while acknowledge_sam != 'hail':
             print_with_typing(f"{choice} {actions[choice]} {beats[0]}")
             print_with_typing(f"{choice} {actions[choice]} {beats[1]}")
     print_with_typing("All Hail Sam Cass!!!")
-    acknowledge_sam = input("Type 'Hail' to continue or 'again' to Print the rules of the game again: ").lower()
+    acknowledge_sam = input("Type 'Hail' to continue or 'again' to Print the rules of the game again: ").lower() # pylint: disable=line-too-long
 
 while True:
     print_with_typing("\nEnter your choice:")
@@ -93,7 +109,7 @@ while True:
 
     # Determine the result of the game
     if choice == comp_choice:
-        result = "DRAW"
+        result = ["DRAW"]
     elif comp_choice_name in rules[choice_name]:
         result = choice_name
     else:
